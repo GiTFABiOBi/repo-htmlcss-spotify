@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: .1s;
+}
+
+body {
+  font-family: 'Hind', sans-serif;
+}
+
+#main.box_flex {
+  width: 100vw;
+  display: flex;
+}
+
+.box_flex > .left {
+  width: 15%;
+  padding: 20px;
+  background-color: #0d0607;
+  color: #fff;
+  height: 700px; /* temporanea (da eliminare) */
+  display: flex;
+  flex-basis: 250px; /* non fa sovrapporre icona audio */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.left_top-content > img {
+  width: 140px;
+}
+
+.fas.fa-volume-up:before {
+  position: relative;
+  left: 50px;
+  top: 10px;
+}
+
+.left_top-content a:hover {
+  color: #fff;
+}
+
+.far.fa-arrow-alt-circle-down,
+.fas.fa-user-alt {
+  padding-right: 15px;
+}
+
+.left_bottom-content > hr {
+  margin: 8px 0;
+  border: .3px solid #aaa;
+}
+
+.left_bottom-content > .user {
+  margin: 8px;
+}
+
+.box_flex > .right {
+  width: 85%;
+  height: 700px; /* temporanea (da eliminare) */
+  background: linear-gradient(0.9turn, #31151e, #612a3b);
+}
+
+.right > .right-container {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.right-container > .nav {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-container > .intro {
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro h2{
+  font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/***** HELPER CLASSES *****/
+
+.D_C_T-d {
+  display: block;
+  color: #aaa;
+  text-decoration: none;
+}
+
+.active {
+ display: block;
+ color: #fff;
+}
+
+.no.active{
+ display: none;
+}
+
+.mycolore_w {
+  color: #fff;
+}
+
+.mycolore_g {
+  color: #aaa;
+}
+
+.p-orzz {
+  padding-left: 15px;
+  padding-right: 15px;
+}
