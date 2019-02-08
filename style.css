@@ -71,6 +71,10 @@ body {
   text-decoration: none;
 }
 
+.left_top-content > h5 {
+  font-size: 14px;
+}
+
 .recenti-title span, .r-t_l > span {
   font-size: 14px;
   font-weight: lighter;
