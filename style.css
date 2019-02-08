@@ -9,22 +9,24 @@ body {
   font-family: 'Hind', sans-serif;
 }
 
+
+
 #main.box_flex {
   width: 100vw;
-  height: 90vh;
   display: flex;
 }
 
 .box_flex > .left {
-  width: 15%;
+  min-width: 200px;
   padding: 20px;
   background-color: #0d0607;
   color: #fff;
-  /* height: 700px;  temporanea (da eliminare) */
+  height: 90vh;  /*temporanea (da eliminare) */
   display: flex;
   flex-basis: 20%; /* non fa sovrapporre icona audio */
   flex-direction: column;
   justify-content: space-between;
+  flex:1;
 }
 
 .left_top-content > img {
@@ -45,13 +47,30 @@ body {
   text-align: center;
 }
 
-.left_top-content a:hover,
-.r-t_l > a:hover {
-  color: #fff;
+.left > .left-top-content {
+  position: relative;
 }
 
-.r-t_l > a.active:hover span {
+.left_top-content > .v_b-green {
+  position: absolute;
+  left: 0;
+  top: 109px;
+  background-color: #1db855;
+  width: 3px;
+  height: 30px;
+}
+
+.left_top-content a:hover,
+.left_bottom-content a:hover,
+.r-t_l > a:hover,
+.navi > a:hover {
   color: #fff;
+  text-decoration: none;
+}
+
+.r-t_l > a.active:hover {
+  color: #aaa;
+  text-decoration: none;
 }
 
 .recenti-title span, .r-t_l > span {
@@ -76,7 +95,7 @@ body {
 
 .left_bottom-content > hr {
   margin: 8px 0;
-  border: .3px solid #aaa;
+  border: .5px solid #aaa;
 }
 
 .left_bottom-content > .user {
@@ -84,8 +103,8 @@ body {
 }
 
 .box_flex > .right {
-  width: 90%;
-  /* height: 700px;  temporanea (da eliminare) */
+  width: 100%;
+  height: 90vh;
   background: linear-gradient(0.9turn, #31151e, #612a3b);
   overflow-y: scroll;
 }
@@ -96,160 +115,96 @@ body {
   margin-right: auto;
 }
 
-.box-rel_hr > .nav {
-  height: 100px;
+.right .hamb_navi {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  color: #ededed;
+  display: none;
+}
+
+.right .navi {
+  padding: 30px 0;
+  margin-bottom: 75px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-wrap: wrap;
 }
 
-.box-rel_hr {
+.navi > a.b_active {
+  color: #fff;
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
-.b_active {
-  border-bottom: 2px solid #1db855;
-}
-
-/* .nav + hr {
+.box-green {
   position: absolute;
-  width: 40px;
-  border: 1px solid #1db855;
-} */
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+}
 
-.right-container .plist_box_flex {
+.box-green > .o_b-green {
+  display: block;
+  width: 30%;
+  height: 100%;
+  margin: auto;
+  background-color: #1db855;
+}
+
+.right .plist {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 .plist h2 {
   font-size: 40px;
+  margin: 30px 0;
 }
 
-.box-plist > .album {
-  width: 200px;
-  height: 200px;
-  margin-right: 15px;
-  margin-bottom: 100px;
+.plist h2.accadue_r,
+.plist h2.accadue_p,
+.plist h2.accadue_fg {
+  font-size: 40px;
+}
+
+.album .album-img {
+  width: 100%;
+  height: auto;
+}
+
+.A {
   position: relative;
 }
 
-.album > .album-img {
-  width: 100%;
+.A > .layover-play {
   height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-  /* LISTA RECENTI */
-.plist.recently .album-img.r-1 {
-  background-image: url('imgs/rock.png');
-}
-
-.plist.recently .album-img.r-2 {
-  background-image: url('imgs/80s.png');
-}
-
-.plist.recently .album-img.r-3 {
-  background-image: url('imgs/arenaRock.png');
-}
-
-.plist.recently .album-img.r-4 {
-  background-image: url('imgs/legendary.png');
-}
-
-.plist.recently .album-img.r-5 {
-  background-image: url('imgs/Muse.png');
-}
-
-.plist.recently .album-img.r-6 {
-  background-image: url('imgs/newMetal.png');
-}
-  /* LISTA PREFERITI */
-.plist.prefer .album-img.p-1 {
-  background-image: url('imgs/foo.png');
-}
-
-.plist.prefer .album-img.p-2 {
-  background-image: url('imgs/foo2.png');
-}
-
-.plist.prefer .album-img.p-3 {
-  background-image: url('imgs/Muse.png');
-}
-
-.plist.prefer .album-img.p-4 {
-  background-image: url('imgs/rocks90.png');
-}
-
-.plist.prefer .album-img.p-5 {
-  background-image: url('imgs/arenaRock.png');
-}
-
-.plist.prefer .album-img.p-6 {
-  background-image: url('imgs/legendary.png');
-}
-
-.plist.prefer .album-img.p-7 {
-  background-image: url('imgs/newMetal.png');
-}
-  /* LISTA FINE GIORNATA */
-.plist.end .album-img.e-1 {
-  background-image: url('imgs/bed.png');
-}
-.plist.end .album-img.e-2 {
-  background-image: url('imgs/dormire.png');
-}
-.plist.end .album-img.e-3 {
-  background-image: url('imgs/piano.png');
-}
-.plist.end .album-img.e-4 {
-  background-image: url('imgs/quiete.png');
-}
-
-.plist.end .album-img.e-5 {
-  background-image: url('imgs/raptopia.png');
-}
-
-.plist.end .album-img.e-6 {
-  background-image: url('imgs/sanremo.png');
-}
-
-.album > .layover-play {
   width: 100%;
-  height: 100%;
   background-color: rgba(30, 30, 30, 0.5);
   position: absolute;
   top: 0;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* centra orizz. icona play */
+  align-items: center; /* centra vert. icona play */
   color: #fff;
   display: none;
 }
 
-.album:hover > .layover-play {
+.A:hover > .layover-play {
   display: flex;
 }
 
-.album > h6{
-  width: 100%;
-  font-size: 16px;
-  text-align: center;
-  padding-top: 15px;
+.album > .B {
+  height: 30%;
 }
 
-
-
-
-
-
-
-
-
-
+.B > h6{
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
 
 #footer {
   background-color: #282828;
@@ -257,7 +212,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 30px;;
   color: #fff;
 }
 
@@ -276,7 +231,7 @@ body {
 }
 
 .album_f > .tit_byl {
-  margin: 0 25px 0 15px;
+  margin: 0 20px 0 15px;
 }
 
 .tit_byl > a {
@@ -289,22 +244,33 @@ body {
 }
 
 #footer > .controls {
-  width: 400px;
+  width: 40%;
 }
 
 #footer > .controls_2 {
-  width: 200px;
+  width: 15%;
 }
 
 .controls > .player {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
-#footer > .controls i.fas,
+#footer > .controls i.fas {
+  padding: 0 20px;
+}
+
 #footer > .controls_2 i.fas {
-  padding: 0 10px;
+  padding: 0 5px;
+}
+
+.bar-player.b-p_2 {
+  width: 50%;
+}
+
+.icon-controls {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .controls > .bar-player,
@@ -314,28 +280,22 @@ body {
   align-items: center;
 }
 
-.bar-player > .empty-bar,
-.controls_2 > .empty-bar {
+.bar-player > .empty-bar {
   display: inline-flex; /* fa sovrapporre la barra corta bianca sopra la lunga grigia */
-  width: 300px;
+  width: 100%;
   height: 5px;
   background-color: #383838;
   border-radius: 2.5px;
-  po
+  margin: 0 8px;
 }
 
-.empty-bar > .full-bar,
-.controls_2 .full-bar {
+.empty-bar > .full-bar {
   display: inline-block;
   width: 25%;
   height: 100%;
   background-color: #b3b3b3;
   border-radius: 2.5px;
 }
-
-
-
-
 
 /***** HELPER CLASSES *****/
 
@@ -350,7 +310,7 @@ body {
  color: #fff;
 }
 
-.no.active{
+.no.active {
  display: none;
 }
 
@@ -361,4 +321,100 @@ body {
 .p-orzz {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+/***** MEDIA QUERY *****/
+
+
+
+@media screen and (max-width: 960px) {
+
+  .right .navi {
+    display: none;
+  }
+
+  .right .hamb_navi {
+    display: block;
+    z-index: 1;
+  }
+
+  .plist.b_t {
+    margin-top: 80px;
+  }
+
+  .left_top-content span,
+  .left_top-content h5,
+  .left_top-content .r-t_l i[class*="fa-volume-up"],
+  .left_bottom-content span {
+    display: none;
+  }
+
+  .left_bottom-content > .user {
+    padding: 0;
+  }
+
+  .box_flex > .left {
+    min-width: 69px;
+  }
+
+  #footer > .controls {
+    width: 75%;
+  }
+
+  .fa-play-circle:before {
+    font-size: 20px;
+  }
+
+  #footer > .controls i.fas {
+    padding: 0;
+  }
+
+  .controls_2 {
+    flex-direction: column;
+  }
+
+  .icon-controls {
+    justify-content: center;
+  }
+
+  .bar-player > .empty-bar {
+    margin: 0;
+  }
+
+  .album_f > .tit_byl {
+    margin-right: -15px;
+  }
+
+  .fa-heart:before {
+    display: inline-block;
+    margin-top: 18px;
+  }
+
+  .album_f > .mini_cover {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .album_f > .tit_byl {
+    width: 100%;
+    margin: 0;
+  }
+
+  #footer {
+    height: 180px;
+    flex-direction: column;
+    padding: 25px 0;
+  }
+
+  #footer > .controls {
+    width: 90%;
+    margin: -7px 0 15px;
+  }
+
+  #footer > .controls_2 {
+    width: 50%;
+    flex-direction: row;
+  }
 }

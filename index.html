@@ -2,8 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>SpotiFaBi</title>
   </head>
@@ -12,8 +14,9 @@
     <main id="main" class="box_flex">
       <!-- BOX NERO SX -->
       <section class="left">
-        <!-- Contenuto in alto -->
+        <!-- Contenuto in alto (navigazione musica) -->
         <div class="left_top-content">
+          <div class="v_b-green"></div>
           <img src="imgs/Spotify_Logo_RGB_White.png" alt="">
           <a href="#" class="D_C_T-d"><i class="fas fa-search fa-lg"></i><span>Cerca</span></a>
           <a href="#" class="color active D_C_T-d"><i class="fas fa-home fa-lg"></i><span>Cerca</span></a>
@@ -23,40 +26,40 @@
           <div class="recenti-title">
             <!-- primo -->
             <div class="r-t_l">
-              <a href="#" class="active D_C_T-d">
-                <span>The Rock Show</span>
-                <i class="fas fa-volume-up"></i>
+              <a href="#" class="D_C_T-d">
+                <span class="inplay">The Rock Show</span>
+                <i class="fas fa-volume-up no active"></i>
               </a>
             </div>
             <span class="D_C_T-d">PLAYLIST</span>
             <!-- secondo -->
             <div class="r-t_l">
-              <a href="#" class="D_C_T-d">
-                <span>The Rock Show</span>
-                <i class="fas fa-volume-up no active"></i>
+              <a href="#" class="D_C_T-d"> <!-- elimina .active e assegnala all'elemento <a> che simula music in play -->
+                <span>Foo Fighters</span>
+                <i class="fas fa-volume-up no active"></i> <!-- se elimini .active aggiungi qui .no.active eliminandola dall'elemento <i> precedente (come vedi su questo <i>) -->
               </a>
             </div>
-            <span class="D_C_T-d">PLAYLIST</span>
+            <span class="D_C_T-d">ARTISTA</span>
             <!-- terzo -->
             <div class="r-t_l">
               <a href="#" class="D_C_T-d">
-                <span>The Rock Show</span>
+                <span>Muse</span>
                 <i class="fas fa-volume-up no active"></i>
               </a>
             </div>
-            <span class="D_C_T-d">PLAYLIST</span>
+            <span class="D_C_T-d">ARTISTA</span>
             <!-- quarto -->
             <div class="r-t_l">
-              <a href="#" class="D_C_T-d">
-                <span>The Rock Show</span>
-                <i class="fas fa-volume-up no active"></i>
+              <a href="#" class="active D_C_T-d">
+                <span>Led Zeppelin</span>
+                <i class="fas fa-volume-up"></i>
               </a>
             </div>
-            <span class="D_C_T-d">PLAYLIST</span>
+            <span class="D_C_T-d">ALBUM</span>
             <!-- quinto -->
             <div class="r-t_l">
               <a href="#" class="D_C_T-d">
-                <span>The Rock Show</span>
+                <span>New Metal</span>
                 <i class="fas fa-volume-up no active"></i>
               </a>
             </div>
@@ -74,208 +77,270 @@
       </section>
       <!-- BOX BORDEAUX DX -->
       <section class="right">
-        <div class="right-container">
-          <div class="box-rel_hr">
-            <div class="nav">
-              <a href="#" class="D_C_T-d p-orzz b_active">IN EVIDENZA</a>
-              <a href="#" class="D_C_T-d p-orzz">PODCAST</a>
-              <a href="#" class="D_C_T-d p-orzz">CLASSIFICHE</a>
-              <a href="#" class="D_C_T-d p-orzz">GENERI E MOOD</a>
-              <a href="#" class="D_C_T-d p-orzz">NUOVE USCITE</a>
-              <a href="#" class="D_C_T-d p-orzz">SCOPRI</a>
-            </div>
-            <!-- <hr> -->
+        <div class="container-fluid">
+          <div class="hamb_navi">
+            <i class="fas fa-bars fa-3x"></i>
           </div>
-
+          <div class="navi offset-2 col-8">
+            <a href="#" class="D_C_T-d p-orzz b_active">IN EVIDENZA<span class="box-green"><span class="o_b-green"></span></span></a>
+            <a href="#" class="D_C_T-d p-orzz">PODCAST</a>
+            <a href="#" class="D_C_T-d p-orzz">CLASSIFICHE</a>
+            <a href="#" class="D_C_T-d p-orzz">GENERI E MOOD</a>
+            <a href="#" class="D_C_T-d p-orzz">NUOVE USCITE</a>
+            <a href="#" class="D_C_T-d p-orzz">SCOPRI</a>
+          </div>
           <!-- CANZONI RECENTI -->
-          <section class="plist recently">
-            <h2 class="mycolore_w">Recently played</h2>
-            <div class="plist_box_flex">
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img r-1"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">The Rock Show</h6>
+        <section class="plist b_t">
+            <h2 class="col-12 mycolore_w">Ascoltate di Recente</h2>
+            <!-- cover 1 -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+              <div class="A">
+                <img src="imgs/rock.png" class="album-img img-fluid">
+                <div class="layover-play">
+                  <i class="far fa-play-circle fa-3x"></i>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img r-2"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">The Rock 80s</h6>
+              <div class="B">
+                <h6 class="mycolore_w">The Rock Show</h6>
+              </div>
+            </div>
+            <!-- cover 2 -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+              <div class="A">
+                <img src="imgs/80s.png" class="album-img img-fluid">
+                <div class="layover-play">
+                  <i class="far fa-play-circle fa-3x"></i>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img r-3"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">The Arena Rock</h6>
+              <div class="B">
+                <h6 class="mycolore_w">The Rock Show</h6>
+              </div>
+            </div>
+            <!-- cover 3 -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+              <div class="A">
+                <img src="imgs/arenaRock.png" class="album-img img-fluid">
+                <div class="layover-play">
+                  <i class="far fa-play-circle fa-3x"></i>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img r-4"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">Legendary Rock</h6>
+              <div class="B">
+                <h6 class="mycolore_w">The Rock Show</h6>
+              </div>
+            </div>
+            <!-- cover 4 -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+              <div class="A">
+                <img src="imgs/legendary.png" class="album-img img-fluid">
+                <div class="layover-play">
+                  <i class="far fa-play-circle fa-3x"></i>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img r-5"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">Muse</h6>
+              <div class="B">
+                <h6 class="mycolore_w">The Rock Show</h6>
+              </div>
+            </div>
+            <!-- cover 5 -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+              <div class="A">
+                <img src="imgs/Muse.png" class="album-img img-fluid">
+                <div class="layover-play">
+                  <i class="far fa-play-circle fa-3x"></i>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img r-6"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">New Metal</h6>
+              <div class="B">
+                <h6 class="mycolore_w">The Rock Show</h6>
+              </div>
+            </div>
+            <!-- cover 6 -->
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+              <div class="A">
+                <img src="imgs/newMetal.png" class="album-img img-fluid">
+                <div class="layover-play">
+                  <i class="far fa-play-circle fa-3x"></i>
                 </div>
+              </div>
+              <div class="B">
+                <h6 class="mycolore_w">The Rock Show</h6>
               </div>
             </div>
           </section>
           <!-- MUSICA PREFERITA -->
-          <section class="plist prefer">
-            <h2 class="mycolore_w">Altro come The Rock Show</h2>
-            <div class="plist_box_flex">
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-1"></div>
+          <section class="plist">
+              <h2 class="col-12 mycolore_w">Altro come The Rock Show</h2>
+              <!-- cover 1 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/foo.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
+                </div>
+                <div class="B">
                   <h6 class="mycolore_w">Foo Fighters</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-2"></div>
+              <!-- cover 2 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/foo2.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
+                </div>
+                <div class="B">
                   <h6 class="mycolore_w">Foo Fighters</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-3"></div>
+              <!-- cover 3 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/arenaRock.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
-                  <h6 class="mycolore_w">Muse</h6>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">The Arena Rock</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-4"></div>
+              <!-- cover 4 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/legendary.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
-                  <h6 class="mycolore_w">Rock 90s</h6>
                 </div>
-              </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-5"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
-                  <h6 class="mycolore_w">Arena Rock</h6>
-                </div>
-              </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-6"></div>
-                  <div class="layover-play">
-                    <i class="far fa-play-circle fa-3x"></i>
-                  </div>
+                <div class="B">
                   <h6 class="mycolore_w">Legendary</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img p-7"></div>
+              <!-- cover 5 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/Muse.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
-                  <h6 class="mycolore_w">New Metal</h6>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">Muse</h6>
                 </div>
               </div>
-            </div>
-          </section>
+              <!-- cover 6 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/newMetal.png" class="album-img img-fluid">
+                  <div class="layover-play">
+                    <i class="far fa-play-circle fa-3x"></i>
+                  </div>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">The New Metal</h6>
+                </div>
+              </div>
+              <!-- cover 7 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/LedZeppelin.png" class="album-img img-fluid">
+                  <div class="layover-play">
+                    <i class="far fa-play-circle fa-3x"></i>
+                  </div>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">Led Zeppelin</h6>
+                </div>
+              </div>
+              <!-- cover 8 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/rocks90.png" class="album-img img-fluid">
+                  <div class="layover-play">
+                    <i class="far fa-play-circle fa-3x"></i>
+                  </div>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">Rock 90s</h6>
+                </div>
+              </div>
+            </section>
           <!-- FINE GIORNATA -->
-          <section class="plist end">
-            <h2 class="mycolore_w">A fine giornata...</h2>
-            <div class="plist_box_flex">
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img e-1"></div>
+          <section class="plist">
+              <h2 class="col-12 mycolore_w">A fine Giornata...</h2>
+              <!-- cover 1 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/bed.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
-                  <h6 class="mycolore_w">Bedroom</h6>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">Bedrooms</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img e-2"></div>
+              <!-- cover 2 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/dormire.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
+                </div>
+                <div class="B">
                   <h6 class="mycolore_w">Dolce Dormire</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img e-3"></div>
+              <!-- cover 3 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/piano.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
-                  <h6 class="mycolore_w">Piano in the Background</h6>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">Piano Relax</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img e-4"></div>
+              <!-- cover 4 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/quiete.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
-                  <h6 class="mycolore_w">Quiete Notturna</h6>
+                </div>
+                <div class="B">
+                  <h6 class="mycolore_w">La quiete</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img e-5"></div>
+              <!-- cover 5 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/raptopia.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
+                </div>
+                <div class="B">
                   <h6 class="mycolore_w">RAPtopia</h6>
                 </div>
               </div>
-              <div class="box-plist">
-                <div class="album">
-                  <div class="album-img e-6"></div>
+              <!-- cover 6 -->
+              <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-2 album">
+                <div class="A">
+                  <img src="imgs/sanremo.png" class="album-img img-fluid">
                   <div class="layover-play">
                     <i class="far fa-play-circle fa-3x"></i>
                   </div>
+                </div>
+                <div class="B">
                   <h6 class="mycolore_w">SanRemo 2019</h6>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
         </div> <!-- FINE right-container -->
       </section> <!-- FINE right -->
     </main>
@@ -310,12 +375,16 @@
       </div>
       <!-- Box a dx -->
       <div class="controls_2">
-        <i class="fas fa-align-left"></i>
-        <i class="fas fa-tablet-alt"></i>
-        <i class="fas fa-volume-down"></i>
-        <span class="empty-bar">
-          <span class="full-bar"></span>
-        </span>
+        <div class="icon-controls">
+          <i class="fas fa-align-left"></i>
+          <i class="fas fa-tablet-alt"></i>
+          <i class="fas fa-volume-down"></i>
+        </div>
+        <div class="bar-player b-p_2">
+          <span class="empty-bar">
+            <span class="full-bar"></span>
+          </span>
+        </div>
       </div>
     </footer>
   </body>
