@@ -237,6 +237,10 @@ body {
   font-size: 13px;
 }
 
+.tit_byl > a:hover {
+  color: #fff;
+}
+
 .fas.fa-heart {
   color: #1db855;
 }
