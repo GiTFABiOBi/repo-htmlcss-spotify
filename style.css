@@ -58,24 +58,22 @@ body {
   height: 30px;
 }
 
-.left_top-content a:hover,
-.left_bottom-content a:hover,
-.r-t_l > a:hover,
-.navi > a:hover {
+#main .left_top-content a:hover,
+#main .left_bottom-content a:hover,
+#main .r-t_l > a:hover,
+#main .navi > a:hover,
+a.D_C_T-d:hover  {
   color: #fff;
   text-decoration: none;
 }
 
-.r-t_l > a.active:hover {
+#main .r-t_l > a.active:hover {
   color: #aaa;
   text-decoration: none;
 }
 
+.recenti-title span, .r-t_l > span,
 .left_top-content > h5 {
-  font-size: 14px;
-}
-
-.recenti-title span, .r-t_l > span {
   font-size: 14px;
   font-weight: lighter;
 }
@@ -210,6 +208,7 @@ body {
 
 #footer {
   background-color: #282828;
+  min-height: 80px; /* aggiunto a lezione */
   height: 10vh;
   display: flex;
   justify-content: space-between;
@@ -243,6 +242,7 @@ body {
 
 .tit_byl > a:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
 .fas.fa-heart {
@@ -255,10 +255,7 @@ body {
 
 #footer > .controls_2 {
   width: 15%;
-}
-
-.controls > .player {
-  text-align: center;
+  height: 100px;
 }
 
 #footer > .controls i.fas {
@@ -269,10 +266,6 @@ body {
   padding: 0 5px;
 }
 
-.bar-player.b-p_2 {
-  width: 50%;
-}
-
 .icon-controls {
   width: 50%;
   display: flex;
@@ -280,27 +273,60 @@ body {
 }
 
 .controls > .bar-player,
-.controls_2 {
+#footer > .controls_2 {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.bar-player > .empty-bar {
-  display: inline-flex; /* fa sovrapporre la barra corta bianca sopra la lunga grigia */
-  width: 100%;
-  height: 5px;
-  background-color: #383838;
-  border-radius: 2.5px;
-  margin: 0 8px;
+.circle {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 0 -5px;
+  z-index: 1;
 }
 
-.empty-bar > .full-bar {
-  display: inline-block;
-  width: 25%;
-  height: 100%;
-  background-color: #b3b3b3;
+.full-bar {
+  background-color: #1db855;
+  border-top-left-radius: 2.5px;
+  border-bottom-left-radius: 2.5px;
+  width: 20%;
+  height: 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  display:none;
+}
+
+.empty-bar:hover .full-bar {
+  display: flex;
+}
+
+.empty-bar {
+  background-color: #455a64;
   border-radius: 2.5px;
+  margin-right: 8px;
+  height: 5px;
+  width: 80%;
+}
+
+.controls > .bar-player {
+  width: 90%;
+  margin: auto;
+  font-size: 13px;
+}
+
+.controls > .player {
+  text-align: center;
+  width: 95%;
+  margin: auto;
+}
+
+.controls_2 > .bar-player {
+  width: 50%;
+  margin-left: 8px;
 }
 
 /***** HELPER CLASSES *****/
@@ -339,6 +365,7 @@ body {
 
   .right .hamb_navi {
     display: block;
+    cursor: pointer;
     z-index: 1;
   }
 
@@ -362,26 +389,28 @@ body {
   }
 
   #footer > .controls {
-    width: 75%;
-  }
-
-  .fa-play-circle:before {
-    font-size: 20px;
+    width: 50%;
   }
 
   #footer > .controls i.fas {
-    padding: 0;
+    padding: 0 4px;
   }
 
-  .controls_2 {
+  #footer > .controls_2 {
+    width: 30%;
+    height: 60px;
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
   }
 
-  .icon-controls {
+  .controls_2 > .icon-controls {
     justify-content: center;
+    width: 60%;
   }
 
-  .bar-player > .empty-bar {
+  .controls_2 > .bar-player {
+    width: 60%;
     margin: 0;
   }
 
@@ -401,26 +430,25 @@ body {
 
 /***** MEDIA QUERY SMARTPHONE*****/
 
-@media screen and (max-width: 450px) {
-
-  .album_f > .tit_byl {
-    width: 100%;
-    margin: 0;
-  }
+@media screen and (max-width: 600px) {
 
   #footer {
-    height: 180px;
+    min-height: 240px;
     flex-direction: column;
-    padding: 25px 0;
+    padding: 60px 0;
   }
 
   #footer > .controls {
     width: 90%;
-    margin: -7px 0 15px;
+    margin: 50px 0;
   }
 
   #footer > .controls_2 {
-    width: 50%;
+    width: 40%;
     flex-direction: row;
+  }
+
+  .album_f > .mini_cover {
+    display: block;
   }
 }
