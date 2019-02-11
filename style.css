@@ -203,7 +203,6 @@ a.D_C_T-d:hover  {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
 }
 
 #footer {
@@ -450,5 +449,13 @@ a.D_C_T-d:hover  {
 
   .album_f > .mini_cover {
     display: block;
+  }
+
+  .B > h6{
+    height: 50%;
+  }
+
+  .album > .B {
+    margin-bottom: 80px;
   }
 }
